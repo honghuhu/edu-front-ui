@@ -8,21 +8,13 @@
 
     <div class="sign-up-container">
       <el-form ref="userForm" :model="user">
-        <el-form-item
-          class="input-prepend restyle"
-          prop="mobile"
-          :rules="[{ required: true, message: '请输入手机号码', trigger: 'blur' },{validator: checkPhone, trigger: 'blur'}]"
-        >
+        <el-form-item class="input-prepend restyle" prop="mobile" :rules="[{ required: true, message: '请输入手机号码', trigger: 'blur' },{validator: checkPhone, trigger: 'blur'}]">
           <div>
             <el-input type="text" placeholder="手机号" v-model="user.username" />
             <i class="iconfont icon-phone" />
           </div>
         </el-form-item>
-        <el-form-item
-          class="input-prepend"
-          prop="password"
-          :rules="[{ required: true, message: '请输入密码', trigger: 'blur' }]"
-        >
+        <el-form-item class="input-prepend" prop="password" :rules="[{ required: true, message: '请输入密码', trigger: 'blur' }]">
           <div>
             <el-input type="password" placeholder="密码" v-model="user.password" />
             <i class="iconfont icon-password" />
@@ -38,12 +30,7 @@
         <h6>社交帐号登录</h6>
         <ul>
           <li>
-            <a
-              id="weixin"
-              class="weixin"
-              target="_blank"
-              href="http://localhost:8150/api/ucenter/wx/qr"
-            >
+            <a id="weixin" class="weixin" target="_blank" href="http://localhost:8150/api/ucenter/wx/qr">
               <i class="iconfont icon-weixin" />
             </a>
           </li>

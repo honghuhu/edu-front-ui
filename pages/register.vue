@@ -8,11 +8,7 @@
 
     <div class="sign-up-container">
       <el-form ref="userForm" :model="params">
-        <el-form-item
-          class="input-prepend restyle"
-          prop="nickname"
-          :rules="[{ required: true, message: '请输入你的昵称', trigger: 'blur' }]"
-        >
+        <el-form-item class="input-prepend restyle" prop="nickname" :rules="[{ required: true, message: '请输入你的昵称', trigger: 'blur' }]">
           <div>
             <el-input type="text" placeholder="你的昵称" v-model="params.nickname" />
 
@@ -20,11 +16,8 @@
           </div>
         </el-form-item>
 
-        <el-form-item
-          class="input-prepend restyle no-radius"
-          prop="mobile"
-          :rules="[{ required: true, message: '请输入手机号码', trigger: 'blur' },{validator: checkPhone, trigger: 'blur'}]"
-        >
+        <el-form-item class="input-prepend restyle no-radius" prop="mobile"
+          :rules="[{ required: true, message: '请输入手机号码', trigger: 'blur' },{validator: checkPhone, trigger: 'blur'}]">
           <div>
             <el-input type="text" placeholder="手机号" v-model="params.mobile" />
 
@@ -32,11 +25,7 @@
           </div>
         </el-form-item>
 
-        <el-form-item
-          class="input-prepend restyle no-radius"
-          prop="code"
-          :rules="[{ required: true, message: '请输入验证码', trigger: 'blur' }]"
-        >
+        <el-form-item class="input-prepend restyle no-radius" prop="code" :rules="[{ required: true, message: '请输入验证码', trigger: 'blur' }]">
           <div style="width: 100%;display: block;float: left;position: relative">
             <el-input type="text" placeholder="验证码" v-model="params.code" />
 
@@ -44,21 +33,11 @@
           </div>
 
           <div class="btn" style="position:absolute;right: 0;top: 6px;width: 40%;">
-            <a
-              href="javascript:"
-              type="button"
-              @click="smsCode()"
-              :value="codeTest"
-              style="border: none;background-color: none"
-            >{{codeTest}}</a>
+            <a href="javascript:" type="button" @click="smsCode()" :value="codeTest" style="border: none;background-color: none">{{codeTest}}</a>
           </div>
         </el-form-item>
 
-        <el-form-item
-          class="input-prepend"
-          prop="password"
-          :rules="[{ required: true, message: '请输入密码', trigger: 'blur' }]"
-        >
+        <el-form-item class="input-prepend" prop="password" :rules="[{ required: true, message: '请输入密码', trigger: 'blur' }]">
           <div>
             <el-input type="password" placeholder="设置密码" v-model="params.password" />
 
@@ -87,12 +66,7 @@
 
         <ul>
           <li>
-            <a
-              id="weixin"
-              class="weixin"
-              target="_blank"
-              href="http://huaan.free.idcfengye.com/api/ucenter/wx/login"
-            >
+            <a id="weixin" class="weixin" target="_blank" href="http://huaan.free.idcfengye.com/api/ucenter/wx/login">
               <i class="iconfont icon-weixin" />
             </a>
           </li>

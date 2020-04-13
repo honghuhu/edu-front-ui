@@ -6,5 +6,11 @@ export default {
             url: `/lecturer/teacher-front/${page}/${limit}`,
             method: 'get'
         })
+    },
+    detail(id) {
+        return request({
+            url: `/lecturer/teacher-front/${id}`,
+            method: 'get'
+        })
     }
 }

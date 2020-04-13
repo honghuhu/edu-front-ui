@@ -3,12 +3,7 @@
     <!-- 幻灯片 开始 -->
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
-        <div
-          v-for="banner in banners"
-          :key="banner.id"
-          class="swiper-slide"
-          style="background: #040B1B;"
-        >
+        <div v-for="banner in banners" :key="banner.id" class="swiper-slide" style="background: #040B1B;">
           <a target="_blank" :href="banner.linkUrl">
             <img :src="banner.imageUrl" :alt="banner.title" />
           </a>
@@ -41,11 +36,7 @@
                       </div>
                     </section>
                     <h3 class="hLh30 txtOf mt10">
-                      <a
-                        href="#"
-                        :title="course.title"
-                        class="course-title fsize18 c-333"
-                      >{{course.title}}</a>
+                      <a href="#" :title="course.title" class="course-title fsize18 c-333">{{course.title}}</a>
                     </h3>
                     <section class="mt10 hLh20 of">
                       <span class="fr jgTag bg-green" v-if="Number(course.price) === 0">
@@ -88,11 +79,7 @@
                       </a>
                     </div>
                     <div class="mt10 hLh30 txtOf tac">
-                      <a
-                        href="/teacher/1"
-                        :title="teacher.name"
-                        class="fsize18 c-666"
-                      >{{teacher.name}}</a>
+                      <a href="/teacher/1" :title="teacher.name" class="fsize18 c-666">{{teacher.name}}</a>
                     </div>
                     <div class="hLh30 txtOf tac">
                       <span class="fsize14 c-999">{{teacher.career}}</span>
