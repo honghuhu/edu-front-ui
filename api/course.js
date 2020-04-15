@@ -1,16 +1,22 @@
 import request from '@/utils/request'
 
 export default {
-    page(courseVo) {
+    page(data) {
         return request({
             url: '/lecturer/course-front/page',
             method: 'post',
-            data: courseVo
+            data
         })
     },
     subjectTree() {
         return request({
             url: '/lecturer/subject/tree',
+            method: 'get'
+        })
+    },
+    detail(id) {
+        return request({
+            url: `/lecturer/course-front/${id}`,
             method: 'get'
         })
     }
