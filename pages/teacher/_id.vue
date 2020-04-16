@@ -1,5 +1,4 @@
- 
-<template>
+ <template>
   <div id="aCoursesList" class="bg-fa of">
     <!-- 讲师介绍 开始 -->
     <section class="container">

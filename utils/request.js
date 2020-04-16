@@ -12,6 +12,8 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     if (config.url.indexOf("lecturer") != -1) {
+    } else if (config.url.indexOf("vod") != -1) {
+      config.baseURL = "http://localhost:8002";
     } else if (config.url.indexOf("cms") != -1) {
       config.baseURL = "http://localhost:8003";
     } else if (config.url.indexOf("msm") != -1) {
