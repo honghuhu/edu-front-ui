@@ -19,7 +19,11 @@ service.interceptors.request.use(
     } else if (config.url.indexOf("msm") != -1) {
       config.baseURL = "http://localhost:8004";
     } else if (config.url.indexOf("ucenter") != -1) {
-      config.baseURL = "http://localhost:8150/api";
+      config.baseURL = "http://localhost:8005";
+    } else if (config.url.indexOf("order") != -1) {
+      config.baseURL = "http://localhost:8006";
+    }else if (config.url.indexOf("statistics") != -1) {
+      config.baseURL = "http://localhost:8007";
     }
     if (cookie.get('007_token')) {
       config.headers['token'] = cookie.get('007_token');

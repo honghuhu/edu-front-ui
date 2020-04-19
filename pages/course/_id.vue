@@ -32,7 +32,10 @@
               </span>
             </section>
             <section class="c-attr-mt">
-              <a href="#" title="立即观看" class="comm-btn c-btn-3">立即观看</a>
+              <!-- <a @click="course.price === 0 || isBuy ? '' : createOrder()" href="#" :title="course.price === 0 || isBuy ? '立即观看':'立即购买'"
+                class="comm-btn c-btn-3">{{course.price === 0 || isBuy ? '立即观看':'立即购买'}}</a> -->
+              <a v-if="Number(course.price) === 0 || isBuy" href="#" title="立即观看" class="comm-btn c-btn-3"> 立即观看 </a>
+              <a v-else @click="createOrder()" href="#" title="立即购买" class="comm-btn c-btn-3">立即购买</a>
             </section>
           </section>
         </aside>
@@ -84,7 +87,7 @@
                   <div class="course-txt-body-wrap">
                     <section class="course-txt-body">
                       <p v-html="course.description">
-                        
+
                       </p>
                     </section>
                   </div>
@@ -159,15 +162,31 @@
 </template>
 <script>
 import course from "@/api/course";
+import order from "@/api/order";
 
 export default {
   asyncData({ params, error }) {
-    return course.detail(params.id).then(response => {
-      return {
-        course: response.data.data.course,
-        chapters: response.data.data.chapters
-      };
-    });
+    return { courseId: params.id, course: {}, chapters: [], isBuy: false };
+  },
+  created() {
+    this.courseInfo();
+  },
+  methods: {
+    courseInfo() {
+      course.detail(this.courseId).then(response => {
+        this.course = response.data.data.course;
+        this.chapters = response.data.data.chapters;
+        this.isBuy = response.data.data.isBuy;
+      });
+    },
+    // 生成订单
+    createOrder() {
+      order.createOrder(this.courseId).then(response => {
+        // 获取返回订单号
+        // 跳转订单详情页面
+        this.$router.push({ path: `/order/${response.data.data}` });
+      });
+    }
   }
 };
 </script>
