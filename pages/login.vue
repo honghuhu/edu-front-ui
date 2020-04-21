@@ -30,7 +30,7 @@
         <h6>社交帐号登录</h6>
         <ul>
           <li>
-            <a id="weixin" class="weixin" target="_blank" href="http://localhost:8150/api/ucenter/wx/qr">
+            <a id="weixin" class="weixin" target="_blank" href="http://localhost:8010/ucenter/wx/qr">
               <i class="iconfont icon-weixin" />
             </a>
           </li>

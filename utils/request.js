@@ -4,14 +4,15 @@ import { MessageBox, Message } from 'element-ui'
 
 // 创建axios实例
 const service = axios.create({
-  baseURL: 'http://localhost:8001', // api的base_url
+  baseURL: 'http://localhost:8010', // api的base_url
   timeout: 20000 // 请求超时时间
 })
 
 // http request 拦截器
 service.interceptors.request.use(
   config => {
-    if (config.url.indexOf("lecturer") != -1) {
+    // 添加网关注释掉下边
+    /* if (config.url.indexOf("lecturer") != -1) {
     } else if (config.url.indexOf("vod") != -1) {
       config.baseURL = "http://localhost:8002";
     } else if (config.url.indexOf("cms") != -1) {
@@ -24,7 +25,7 @@ service.interceptors.request.use(
       config.baseURL = "http://localhost:8006";
     }else if (config.url.indexOf("statistics") != -1) {
       config.baseURL = "http://localhost:8007";
-    }
+    } */
     if (cookie.get('007_token')) {
       config.headers['token'] = cookie.get('007_token');
     }
