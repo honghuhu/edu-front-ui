@@ -1,6 +1,6 @@
 <template>
 
-  <div class="guli-player">
+  <div class="007-player">
     <div class="head">
       <a href="#" title="007学院">
         <img class="logo" src="~/assets/img/logo.png" lt="007学院">
